@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Home from "./pages/Home/Home";
 import "./App.css";
 import About from "./pages/About/About";
-import Admin from "./pages/Admin/Admin";
+
 import Productpage from "./pages/Productpage/Productpage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { ThemeContext, themes } from "./contexts/ThemeContext";
+import ProductEdit from "./components/ProductEdit/ProductEdit";
 
 const App = () => {
   const [theme, setTheme] = useState(themes.light);
@@ -24,7 +25,7 @@ const App = () => {
                   <Link to="/about">About</Link>
                 </li>
                 <li>
-                  <Link to="/Admin">Admin</Link>
+                  <Link to="/AddProduct">Add new product</Link>
                 </li>
               </ul>
 
@@ -44,7 +45,7 @@ const App = () => {
                 <About />
               </Route>
               <Route path="/AddProduct">
-                <Admin />
+                <ProductEdit />
               </Route>
               <Route
                 path="/Products/:ProductId"
